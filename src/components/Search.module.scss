@@ -1,0 +1,32 @@
+.form {
+  position: relative;
+  width: 40%;
+  input {
+    background-color: transparent;
+    border: 0.15rem solid #d1d5db;
+    padding: 0.5rem;
+    outline: none;
+    background: transparent;
+    border-radius: 0.5rem;
+    width: 100%;
+    letter-spacing: 0.1rem;
+    color: white;
+
+    &:focus {
+      outline: none;
+    }
+    &::placeholder {
+      color: white;
+      letter-spacing: 0.1rem;
+    }
+  }
+  button {
+    background-color: transparent;
+    height: 2rem;
+    width: 2rem;
+    border: none;
+    position: absolute;
+    right: 0.5rem;
+    top: 0.3rem;
+  }
+}
