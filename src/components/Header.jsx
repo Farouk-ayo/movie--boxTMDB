@@ -1,7 +1,7 @@
 // import React from "react";
 import classes from "./Header.module.scss";
-import imdb from "../assets/imdb.png";
-import tomatoFav from "../assets/rottenTomato.png";
+import imdb from "../assets/imdb.svg";
+import tomatoFav from "../assets/rottenTomato.svg";
 import { FaPlay } from "react-icons/fa6";
 import Navbar from "./Navbar";
 
