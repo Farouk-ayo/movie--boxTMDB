@@ -10,24 +10,24 @@ import { RiLogoutBoxRLine } from "react-icons/ri";
 const Sidebar = () => {
   return (
     <section className={classes.sidebar}>
-      <div>
+      <div className={classes.movieBox}>
         <img src={movieBoxlogo} alt="" />
         <h1>MovieBox</h1>
       </div>
       <nav>
         <div>
-          <GoHome />
+          <GoHome size={30} />
           <h6>Home</h6>
         </div>
         <div>
-          <BiCameraMovie />
+          <BiCameraMovie size={30} />
           <h6>Movies</h6>
         </div>
         <div>
-          <MdOndemandVideo /> <h6>TV Series</h6>
+          <MdOndemandVideo size={30} /> <h6>TV Series</h6>
         </div>
         <div>
-          <RxCalendar /> <h6>Upcoming</h6>
+          <RxCalendar size={30} /> <h6>Upcoming</h6>
         </div>
         <article>
           <h3>Play movie quizes and earn free tickets</h3>
@@ -35,7 +35,7 @@ const Sidebar = () => {
           <button disabled>Start playing</button>
         </article>
         <div>
-          <RiLogoutBoxRLine />
+          <RiLogoutBoxRLine size={30} />
           <span>Log out</span>
         </div>
       </nav>

@@ -4,10 +4,17 @@ import poster from "../assets/poster1.png";
 import { BsHeart, BsHeartFill } from "react-icons/bs";
 import imdb from "../assets/imdb.svg";
 import tomatoFav from "../assets/rottenTomato.svg";
+import { useNavigate } from "react-router-dom";
 
 const Card = () => {
+  const navigate = useNavigate();
+
+  const navigateHandler = () => {
+    navigate("/movies");
+  };
+
   return (
-    <div className={classes.card}>
+    <div className={classes.card} onClick={navigateHandler}>
       <img src={poster} alt="" />
       <span className={classes.type}>TV SERIES</span>
       <span className={classes.favourite}>

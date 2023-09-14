@@ -2,12 +2,11 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 20%;
-  height: 100%;
+  width: 15%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 5rem 2rem;
   border-top-right-radius: 2rem;
   border-bottom-right-radius: 2rem;
   background-color: #ffffff;
@@ -15,16 +14,56 @@
   div {
     display: flex;
     gap: 1rem;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
+
+    h6 {
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: 1.4rem;
+    }
   }
 }
 
 article {
   background-color: #f8e7eb66;
+  padding: 0.5rem;
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 1rem;
+  h3 {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  p {
+    font-weight: 500;
+    font-size: 0.7rem;
+  }
   button {
     background-color: #be123c33;
     color: #be123c;
     border-radius: 1rem;
+    margin: 0rem 1rem;
+    font-weight: 700;
+    padding: 0.5rem;
+    border: none;
   }
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+}
+
+.movieBox {
+  padding: 1.5rem 1rem;
 }

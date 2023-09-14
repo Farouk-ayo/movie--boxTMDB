@@ -6,13 +6,11 @@ import EachCardpage from "./pages/EachCardpage";
 function App() {
   const router = createBrowserRouter([
     {
-      path: "",
+      path: "/",
       element: <Home />,
-      children: [
-        { path: "home", element: <Home /> },
-        { path: "movies", element: <EachCardpage /> },
-      ],
     },
+    { path: "home", element: <Home /> },
+    { path: "movies", element: <EachCardpage /> },
   ]);
 
   return <RouterProvider router={router} />;
