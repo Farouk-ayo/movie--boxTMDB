@@ -7,7 +7,10 @@ const Grid = ({ movies }) => {
   // console.log(movies);
   return (
     <div className={classes.grid}>
-      {movies && movies.map((each) => <Card key={each.id} eachMovie={each} />)}
+      {movies &&
+        movies.map((eachMovie) => (
+          <Card key={eachMovie.id} eachMovie={eachMovie} />
+        ))}
     </div>
   );
 };
