@@ -9,7 +9,7 @@ export const apiFetch = async (params) => {
   });
 
   if (!response.ok) {
-    throw new Error(`Failed to fetch data: ${response.status}`);
+    throw new Error(`Failed to fetch data: ${response.status} error`);
   }
   {
     return response.json();

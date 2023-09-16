@@ -1,5 +1,5 @@
-import Eachpage from "../components/Eachpage";
-import Sidebar from "../components/Sidebar";
+import Eachpage from "../sections/Eachpage";
+import Sidebar from "../sections/Sidebar";
 import classes from "./Moviepage.module.scss";
 
 const Moviepage = () => {

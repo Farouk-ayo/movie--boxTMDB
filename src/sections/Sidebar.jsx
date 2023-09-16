@@ -6,8 +6,14 @@ import { BiCameraMovie } from "react-icons/bi";
 import { MdOndemandVideo } from "react-icons/md";
 import { RxCalendar } from "react-icons/rx";
 import { RiLogoutBoxRLine } from "react-icons/ri";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
+  const navigate = useNavigate();
+  const onNavigateHome = () => {
+    navigate("/home");
+  };
+
   return (
     <section className={classes.sidebar}>
       <div className={classes.movieBox}>
@@ -15,7 +21,7 @@ const Sidebar = () => {
         <h1>MovieBox</h1>
       </div>
       <nav>
-        <div>
+        <div onClick={onNavigateHome}>
           <GoHome size={30} />
           <h6>Home</h6>
         </div>

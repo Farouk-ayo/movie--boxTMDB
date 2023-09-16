@@ -8,7 +8,7 @@ import ticket from "../assets/tickets.svg";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { apiFetch } from "../utils/api";
-import LoadingAnimation from "./Loading";
+import LoadingAnimation from "../components/Loading";
 
 const Eachpage = () => {
   const params = useParams();

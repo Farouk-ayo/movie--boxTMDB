@@ -1,7 +1,7 @@
 // import React from "react";
 
 import Grid from "../components/Grid";
-import Header from "../components/Header";
+import Header from "../sections/Header";
 import right from "../assets/right.svg";
 import classes from "./Homepage.module.scss";
 import Footer from "../components/Footer";

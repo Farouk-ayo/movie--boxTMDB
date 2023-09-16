@@ -2,7 +2,7 @@
 import classes from "./Navbar.module.scss";
 import tvLogo from "../assets/tv.png";
 import menu from "../assets/Menu.png";
-import Search from "./Search";
+import Search from "../components/Search";
 
 const Navbar = () => {
   return (
