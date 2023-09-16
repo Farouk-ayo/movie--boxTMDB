@@ -4,27 +4,47 @@ import { HiMiniPlay } from "react-icons/hi2";
 import { BsListUl } from "react-icons/bs";
 import { AiFillStar } from "react-icons/ai";
 import otherMovies from "../assets/othermovies.png";
-import previewPhoto from "../assets/landphoto.png";
 import ticket from "../assets/tickets.svg";
 import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { apiFetch } from "../utils/api";
 
 const Eachpage = () => {
+  const params = useParams();
+  const id = params.id;
+  const [details, setDetails] = useState("");
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await apiFetch(`${id}`);
+      setDetails(data);
+    };
+
+    fetchData();
+  }, [id]);
+
+  // console.log(details);
+
   return (
     <main className={classes.eachpage}>
       <section className={classes.movie}>
-        <img src={previewPhoto} alt="" />
+        <img
+          src={`https://image.tmdb.org/t/p/original/${details.poster_path}`}
+          alt=""
+        />
         <HiMiniPlay className={classes.play} color="white" size={40} />
         <a href="">Watch Trailer</a>
       </section>
       <section className={classes.details}>
         <div className={classes.left}>
           <h3>
-            <span>Top Gun: Maverick</span>
+            <span data-testid="movie-title">{details.title}</span>
             <span>•</span>
-            <span>2022</span>
+            <span data-testid="movie-release-date>2022">
+              {details.release_date}
+            </span>
             <span>•</span>
-            <span>PG-13</span>
-            <span>2h 10m</span>
+            <span data-testid="movie-runtime">{details.runtime}</span>
           </h3>
           <div>
             <span>Action</span>
@@ -40,12 +60,7 @@ const Eachpage = () => {
       </section>
       <section className={classes.bottom}>
         <div>
-          <p>
-            After thirty years, Maverick is still pushing the envelope as a top
-            naval aviator, but must confront ghosts of his past when he leads
-            TOP guns elite graduates on a mission that demands the ultimate
-            sacrifice from those chosen to fly it.
-          </p>
+          <p data-testid="movie-overview">{details.overview}</p>
           <h4>
             <span>Director :</span>
             <span>Joseph Kosinski</span>

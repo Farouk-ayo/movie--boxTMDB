@@ -11,14 +11,15 @@ import { useEffect, useState } from "react";
 const Homepage = () => {
   const [movies, setMovies] = useState();
   useEffect(() => {
-    if (apiFetch.length === 0) {
-      const fetchData = async () => {
-        const data = await apiFetch();
-        setMovies(data.results.slice(0, 10));
-      };
-      fetchData();
-    }
-  }, []);
+    const fetchData = async () => {
+      const data = await apiFetch("top_rated");
+      setMovies(data.results.slice(0, 10));
+    };
+
+    // if (apiFetch.length === 0) {
+    fetchData();
+    // }
+  }, [movies]);
 
   const editedFetchMovies = movies;
 

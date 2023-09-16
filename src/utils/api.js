@@ -1,5 +1,5 @@
-export const apiFetch = async () => {
-  const response = await fetch("https://api.themoviedb.org/3/movie/top_rated", {
+export const apiFetch = async (params) => {
+  const response = await fetch(`https://api.themoviedb.org/3/movie/${params}`, {
     headers: {
       accept: "application/json",
       Authorization:

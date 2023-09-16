@@ -1,15 +1,15 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.scss";
-import Home from "./pages/Homepage";
 import Moviepage from "./pages/Moviepage";
+import Homepage from "./pages/Homepage";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home />,
+      element: <Homepage />,
     },
-    { path: "home", element: <Home /> },
+    { path: "home", element: <Homepage /> },
     { path: "movies/:id", element: <Moviepage /> },
   ]);
 
