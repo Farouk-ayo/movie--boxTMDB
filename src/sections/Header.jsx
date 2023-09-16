@@ -10,9 +10,7 @@ const Header = () => {
     <header className={classes.header}>
       <Navbar />
       <div className={classes.textcontent}>
-        <h1>
-          John Wick 3 :<br /> Parabellum
-        </h1>
+        <h1>John Wick 3 : Parabellum</h1>
         <div>
           <span>
             <img src={imdb} alt="" />

@@ -29,11 +29,9 @@ const Eachpage = () => {
 
   const getUtc = () => {
     const date = new Date(details.release_date).toUTCString();
-    const newDate = date.split(" ").slice(0, 4).join(" ");
+    const newDate = date.split(" ").join(" ");
     return newDate;
   };
-
-  console.log(video);
 
   return (
     <>
