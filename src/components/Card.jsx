@@ -20,8 +20,6 @@ const Card = ({ eachMovie, key }) => {
     setFavorite(!favorite);
   };
 
-  console.log(eachMovie);
-
   return (
     <div
       key={key}
@@ -41,8 +39,8 @@ const Card = ({ eachMovie, key }) => {
           <BsHeartFill color="#BE123C" size={20} className={classes.fill} />
         )}
       </span>
-      <p data-testid="movie-release-date">{eachMovie.release_date}</p>
       <h3 data-testid="movie-title">{eachMovie.title}</h3>
+      <p data-testid="movie-release-date">{eachMovie.release_date}</p>
       <div className={classes.rating}>
         <div>
           <img src={imdb} alt="" />

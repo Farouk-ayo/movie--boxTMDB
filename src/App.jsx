@@ -11,8 +11,12 @@ function App() {
       element: <Homepage />,
       errorElement: <Errorpage />,
     },
-    { path: "home", element: <Homepage />, errorElement: <Errorpage /> },
-    { path: "movies/:id", element: <Moviepage />, errorElement: <Errorpage /> },
+    { path: "/home", element: <Homepage />, errorElement: <Errorpage /> },
+    {
+      path: "/movies/:id",
+      element: <Moviepage />,
+      errorElement: <Errorpage />,
+    },
   ]);
 
   return <RouterProvider router={router} />;
