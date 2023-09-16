@@ -29,6 +29,7 @@ const Card = ({ eachMovie, key }) => {
     >
       <img
         src={`https://image.tmdb.org/t/p/original/${eachMovie.poster_path}`}
+        className={classes.poster}
         alt={`${eachMovie.title}`}
         data-testid="movie-poster"
       />

@@ -4,13 +4,27 @@ import imdb from "../assets/imdb.svg";
 import tomatoFav from "../assets/rottenTomato.svg";
 import { FaPlay } from "react-icons/fa6";
 import Navbar from "./Navbar";
+import { useEffect, useState } from "react";
+import { apiFetch } from "../utils/api";
 
 const Header = () => {
+  const [details, setDetails] = useState("");
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await apiFetch(`458156`);
+      setDetails(data);
+    };
+
+    fetchData();
+  }, []);
+
+  console.log(details);
   return (
     <header className={classes.header}>
       <Navbar />
       <div className={classes.textcontent}>
-        <h1>John Wick 3 : Parabellum</h1>
+        <h1 data-testid="movie-title">{details.title}</h1>
         <div>
           <span>
             <img src={imdb} alt="" />
@@ -18,14 +32,10 @@ const Header = () => {
           </span>
           <span>
             <img src={tomatoFav} alt="" />
-            <p>97%</p>
+            <p>{details.vote_average}</p>
           </span>
         </div>
-        <p>
-          John Wick is on the run after killing a member of the international
-          assassins guild, and with a $14 million price tag on his head, he is
-          the target of hit men and women everywhere.
-        </p>
+        <p data-testid="movie-overview">{details.overview}</p>
         <button>
           <span>
             <FaPlay color="#be123c" size={18} />

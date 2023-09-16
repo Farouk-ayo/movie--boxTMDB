@@ -16,6 +16,7 @@ const Homepage = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await apiFetch("top_rated");
+      console.log(data.results);
       setMovies(data.results.slice(0, 10));
       setIsLoading(false);
     };
