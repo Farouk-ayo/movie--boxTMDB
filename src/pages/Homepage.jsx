@@ -3,22 +3,24 @@
 import Grid from "../components/Grid";
 import Header from "../components/Header";
 import right from "../assets/right.svg";
-import classes from "./Home.module.scss";
+import classes from "./Homepage.module.scss";
 import Footer from "../components/Footer";
 import { apiFetch } from "../utils/api";
 import { useEffect, useState } from "react";
 
-const Home = () => {
+const Homepage = () => {
   const [movies, setMovies] = useState();
   useEffect(() => {
-    const fetchData = async () => {
-      const data = await apiFetch();
-      setMovies(data);
-    };
-    fetchData();
+    if (apiFetch.length === 0) {
+      const fetchData = async () => {
+        const data = await apiFetch();
+        setMovies(data.results.slice(0, 10));
+      };
+      fetchData();
+    }
   }, []);
 
-  console.log(movies);
+  const editedFetchMovies = movies;
 
   return (
     <section>
@@ -31,11 +33,11 @@ const Home = () => {
             <img src={right} alt="" />
           </span>
         </a>
-        <Grid />
+        <Grid movies={editedFetchMovies} />
       </div>
       <Footer />
     </section>
   );
 };
 
-export default Home;
+export default Homepage;

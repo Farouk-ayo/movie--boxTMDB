@@ -1,32 +1,53 @@
+/* eslint-disable react/prop-types */
 // import React from "react";
 import classes from "./Card.module.scss";
-import poster from "../assets/poster1.png";
 import { BsHeart, BsHeartFill } from "react-icons/bs";
 import imdb from "../assets/imdb.svg";
 import tomatoFav from "../assets/rottenTomato.svg";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
-const Card = () => {
+const Card = ({ eachMovie, key }) => {
   const navigate = useNavigate();
 
   const navigateHandler = () => {
-    navigate("/movies");
+    navigate(`/movies/${eachMovie.id}`);
   };
 
+  const [favorite, setFavorite] = useState(true);
+  const changeFavorite = (event) => {
+    event.stopPropagation();
+    setFavorite(!favorite);
+  };
+
+  console.log(eachMovie);
+
   return (
-    <div className={classes.card} onClick={navigateHandler}>
-      <img src={poster} alt="" />
+    <div
+      key={key}
+      className={classes.card}
+      onClick={navigateHandler}
+      data-testid="movie-card"
+    >
+      <img
+        src={`https://image.tmdb.org/t/p/original/${eachMovie.poster_path}`}
+        alt={`${eachMovie.title}`}
+        data-testid="movie-poster"
+      />
       <span className={classes.type}>TV SERIES</span>
-      <span className={classes.favourite}>
-        <BsHeart color="#BE123C" />
-        <BsHeartFill color="#BE123C" />
+      <span className={classes.favourite} onClick={changeFavorite}>
+        {favorite ? (
+          <BsHeart color="#BE123C" size={20} className={classes.noFill} />
+        ) : (
+          <BsHeartFill color="#BE123C" size={20} className={classes.fill} />
+        )}
       </span>
-      <p>USA, 2016 - Current</p>
-      <h3>Stranger Things</h3>
+      <p data-testid="movie-release-date">{eachMovie.release_date}</p>
+      <h3 data-testid="movie-title">{eachMovie.title}</h3>
       <div className={classes.rating}>
         <div>
           <img src={imdb} alt="" />
-          <p>8.0/10.00</p>
+          <p>{eachMovie.vote_average}/10.00</p>
         </div>
         <div>
           <img src={tomatoFav} alt="" />

@@ -1,7 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.scss";
-import Home from "./pages/Home";
-import EachCardpage from "./pages/Moviepage";
+import Home from "./pages/Homepage";
+import Moviepage from "./pages/Moviepage";
 
 function App() {
   const router = createBrowserRouter([
@@ -10,7 +10,7 @@ function App() {
       element: <Home />,
     },
     { path: "home", element: <Home /> },
-    { path: "movies", element: <EachCardpage /> },
+    { path: "movies/:id", element: <Moviepage /> },
   ]);
 
   return <RouterProvider router={router} />;

@@ -6,6 +6,7 @@ import { AiFillStar } from "react-icons/ai";
 import otherMovies from "../assets/othermovies.png";
 import previewPhoto from "../assets/landphoto.png";
 import ticket from "../assets/tickets.svg";
+import { useParams } from "react-router-dom";
 
 const Eachpage = () => {
   return (
