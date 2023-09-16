@@ -51,17 +51,13 @@ const Eachpage = () => {
           </section>
           <section className={classes.details}>
             <div className={classes.left}>
+              <h3 data-testid="movie-title">{details.title}</h3>
+              <h3 data-testid="movie-release-date">{getUtc()}</h3>
               <h3>
-                <span data-testid="movie-title">{details.title}</span>
-                <span>•</span>
-                <span data-testid="movie-release-date">{getUtc()}</span>
-                <span>•</span>
-                <span data-testid="movie-runtime">{`${details.runtime} minutes`}</span>
+                <span data-testid="movie-runtime">{details.runtime}</span>
+                <span>minutes</span>
               </h3>
-              <div>
-                <span>Action</span>
-                <span>Drama</span>
-              </div>
+              <div></div>
             </div>
             <div className={classes.right}>
               <AiFillStar size={25} color="gold" />

@@ -13,7 +13,9 @@ const Sidebar = () => {
   const onNavigateHome = () => {
     navigate("/home");
   };
-
+  const onNavigateMovies = () => {
+    navigate("/movies/:id");
+  };
   return (
     <section className={classes.sidebar}>
       <div className={classes.movieBox}>
@@ -25,7 +27,7 @@ const Sidebar = () => {
           <GoHome size={30} />
           <h6>Home</h6>
         </div>
-        <div>
+        <div onClick={onNavigateMovies}>
           <BiCameraMovie size={30} />
           <h6>Movies</h6>
         </div>
