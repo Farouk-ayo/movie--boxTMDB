@@ -4,6 +4,12 @@
   background-size: cover;
   color: white;
   position: relative;
+  @media (max-width: 1000px) {
+    padding: 1rem;
+  }
+  @media (max-width: 900px) {
+    background-position-x: 40%;
+  }
 }
 
 .textcontent {
@@ -14,6 +20,9 @@
   width: 45%;
   margin-top: 5rem;
   margin-bottom: 7rem;
+  @media (max-width: 700px) {
+    width: 80%;
+  }
   h1 {
     font-size: 3rem;
     font-weight: 700;

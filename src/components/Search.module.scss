@@ -1,6 +1,9 @@
 .form {
   position: relative;
   width: 40%;
+  @media (max-width: 900px) {
+    width: 90%;
+  }
   input {
     background-color: transparent;
     border: 0.15rem solid #d1d5db;

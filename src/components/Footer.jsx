@@ -33,7 +33,7 @@ const Footer = () => {
 #111827"
         />
       </div>
-      <div>
+      <div className={classes.footnotes}>
         <a href="">Conditions of Use</a>
         <a href="">Privacy & Policy</a>
         <a href="">Press Room</a>

@@ -34,7 +34,7 @@ const Homepage = () => {
           <Header />
           <div className={classes.header}>
             <h2>Featured Movie</h2>
-            <a href="">
+            <a href="" className={classes.link}>
               <span>See all</span>
               <span>
                 <img src={right} alt="" />

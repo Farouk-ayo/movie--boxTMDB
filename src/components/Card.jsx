@@ -34,7 +34,6 @@ const Card = ({ eachMovie, key }) => {
         alt={`${eachMovie.title}`}
         data-testid="movie-poster"
       />
-      <span className={classes.type}>TV SERIES</span>
       <span className={classes.favourite} onClick={changeFavorite}>
         {favorite ? (
           <BsHeart color="#BE123C" size={20} className={classes.noFill} />

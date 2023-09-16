@@ -17,7 +17,6 @@ const Search = () => {
       />
       <button type="submit">
         <span>
-          {" "}
           <HiOutlineSearch color="#ffffff" size={20} />
         </span>
       </button>

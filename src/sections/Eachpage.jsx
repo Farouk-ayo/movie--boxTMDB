@@ -3,7 +3,6 @@ import classes from "./Eachpage.module.scss";
 import { HiMiniPlay } from "react-icons/hi2";
 import { BsListUl } from "react-icons/bs";
 import { AiFillStar } from "react-icons/ai";
-import otherMovies from "../assets/othermovies.png";
 import ticket from "../assets/tickets.svg";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -66,28 +65,8 @@ const Eachpage = () => {
           <section className={classes.bottom}>
             <div>
               <p data-testid="movie-overview">{details.overview}</p>
-              <h4>
-                <span>Director :</span>
-                <span>Joseph Kosinski</span>
-              </h4>
-              <h4>
-                <span>Director :</span>
-                <span>Joseph Kosinski</span>
-              </h4>
-              <h4>
-                <span>Director :</span>
-                <span>Joseph Kosinski</span>
-              </h4>
               <div>
                 <button>Top rated movie #65</button>
-                <select name="" id="">
-                  <option
-                    value="Awards
-   9 nominations"
-                  >
-                    Awards 9 nominations
-                  </option>
-                </select>
               </div>
             </div>
             <div className={classes.bottomRight}>
@@ -98,7 +77,6 @@ const Eachpage = () => {
               <button>
                 <BsListUl /> More watch options
               </button>
-              <img src={otherMovies} alt="" />
             </div>
           </section>
         </main>
