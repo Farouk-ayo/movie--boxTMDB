@@ -7,13 +7,13 @@ import Errorpage from "./pages/Errorpage";
 function App() {
   const router = createBrowserRouter([
     {
-      path: "/",
+      path: "",
       element: <Homepage />,
       errorElement: <Errorpage />,
     },
-    { path: "/home", element: <Homepage />, errorElement: <Errorpage /> },
+    { path: "home", element: <Homepage />, errorElement: <Errorpage /> },
     {
-      path: "/movies/:id",
+      path: "movies/:id",
       element: <Moviepage />,
       errorElement: <Errorpage />,
     },

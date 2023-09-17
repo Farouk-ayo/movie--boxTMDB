@@ -20,6 +20,7 @@ const Card = ({ eachMovie, key }) => {
     setFavorite(!favorite);
   };
 
+  const year = new Date(eachMovie.release_date).getFullYear();
   return (
     <div
       key={key}
@@ -41,7 +42,7 @@ const Card = ({ eachMovie, key }) => {
         )}
       </span>
       <h3 data-testid="movie-title">{eachMovie.title}</h3>
-      <p data-testid="movie-release-date">{eachMovie.release_date}</p>
+      <p data-testid="movie-release-date">{year}</p>
       <div className={classes.rating}>
         <div>
           <img src={imdb} alt="" />
